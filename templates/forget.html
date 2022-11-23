@@ -1,0 +1,40 @@
+<!--Header-->
+{% include 'header.html' %}
+
+    <!--Forget password content section-->
+    <div class="root-container">
+
+        <div class="font-style form-div-size form-border form-pos">
+        <!--Text section-->
+        <div>
+            <h1 class="h1-f-size">Forgot your password?</h1>
+            <p style="margin-top: 4px;">Please enter the email address associated with your account and We will email you a link to reset your password.</p>
+        </div>
+
+        <!--Form section-->
+        <form method="post" action="{% url 'forgetpasswd'%}">
+        {% csrf_token %}
+        <!--Input section-->
+        <div class="top-margin">
+            <input type="email" name="email" class="input-box" placeholder="Registered Email" required="">
+        </div>
+
+        <!--Forget Button section-->
+        <div class="top-margin">
+            <button type="submit" class="submit-btn">Reset Password</button>
+        </div>
+
+        </form>
+        </div>
+
+        <!--Forget password image section-->
+        <div class="image-container">
+            <img src="/static/img/png-images/forget.png" alt="" class="img100">
+        </div>
+
+    </div>  
+
+    
+
+  <!--Footer-->
+  {% include 'footer.html' %}

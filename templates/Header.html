@@ -1,0 +1,106 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OURSHOP Website</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/static/css/header-css.css">
+    <link rel="stylesheet" href="/static/css/footer-css.css">
+    <link rel="stylesheet" href="/static/css/help.css">
+    <link rel="stylesheet" href="/static/css/profile.css">
+    <link rel="stylesheet" href="/static/css/form-css.css">
+    <link rel="stylesheet" href="/static/css/shop-page.css">
+    <link rel="stylesheet" href="/static/css/testimonial-css.css">
+    <link rel="stylesheet" href="/static/css/cart-css.css">
+    <link rel="stylesheet" href="/static/css/s-p-d-css.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+
+
+    <header class="header">
+        <div class="header-1">
+
+            <div class="brand">
+                <h1>OurShop</h1>
+            </div>
+
+            <div class="search">
+                <form action="{% url 'search' %}" method="post">
+                    {% csrf_token %}
+                    <input type="search" name="search_value" placeholder="search product" class="searchbox"><button
+                        type="submit" class="search-btn">Search</button>
+                </form>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'shop' %}">Shop</a>
+                        <div class="dropdown">
+                            <ul>
+                                <li><a href="{% url 'manshop' %}">Men</a></li>
+                                <li><a href="{% url 'womanshop' %}">Women</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="{% url 'help' %}">Help</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'aboutus' %}">About us</a>
+                    </li>
+                    <li>
+                        <a href="">Account</a>
+                        <div class="dropdown">
+                            <ul>
+                                <li><a href="{% url 'profile' %}">Profile</a></li>
+
+                                {% if user.is_authenticated %}
+                                <li><a href="{% url 'order' %}">Order</a></li>
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                                {% else %}
+                                <li><a href="{% url 'login' %}">Login</a></li>
+                                <li><a href="{% url 'signup' %}">Register</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="location">
+                <form action="{% url 'address' %}">
+                    <button type="submit" class="location-btn">Address</button>
+                </form>
+            </div>
+
+            <div class="iconcontainer">
+                <div class="icon"><a href="{% url 'wishlist' %}" class="icon-css"><i class="bi bi-heart"></i></a></div>
+                <div class="icon"><a href="{% url 'cart' %}" class="icon-css"><i class="bi bi-cart2"></i></a></div>
+                <div class="icon"><a href="{% url 'cart' %}" class="icon-css"><i class="bi bi-person"></i></a></div>
+            </div>
+
+            <div class="username">
+                {% if user.is_authenticated %}
+                Welcome {{user.first_name}}
+                {% endif %}
+            </div>
+        </div>
+
+    </header>

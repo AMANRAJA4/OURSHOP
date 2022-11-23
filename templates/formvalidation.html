@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <form action="#" name="myform">
+        <input type="text" placeholder="enter your name" name="name"><br>
+        <button type="submit" onclick="onlystring(document.myform.name)" >submit</button>
+    </form>
+    <script>
+        function onlystring(inputtxt)
+{
+    var letters = /^[A-Za-z]+$/;
+    if (inputtxt.value.match(letters))
+    {
+        alert("your name is accepted.");
+        return true;
+    }
+    else
+    {
+        alert("Pleasr enter correct name.");
+        return false;
+    }
+}
+function onlynumber()
+{
+    var numbers = document.myform.number.value;
+    if (isNaN(number))
+    {
+        alert("Please enter valid credentials.")
+    }
+    else{
+        return true;
+    }
+}
+    </script>
+</body>
+</html>

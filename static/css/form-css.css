@@ -1,0 +1,132 @@
+.root-container
+{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 100px 0px 100px 100px;
+  padding: 0px 50px;
+  font-family: inter,sans-serif;
+}
+.image-container
+{
+  height: 350px;
+  width: 350px;
+  margin: 10px 50px 0px 50px;
+}
+.font-style
+    {
+      color: #787b7d;
+      font-size: 14px;
+      font-weight: bold;
+      font-family: inter,sans-serif;
+    }
+.form-div-size
+    {
+      max-width: 350px;
+      margin: 0px 50px;
+    }
+.form-border
+{
+    border: 0px solid gray;
+}
+    .h1-f-size
+    {
+      color: #001E2B;
+      font-size: 27px;
+    }
+    .p-size
+    {
+        font-size: 14px;
+    }
+    .display
+    {
+      display: flex;
+    }
+    .input-box
+    {
+      width: 350px;
+      height: 40px;
+      padding: 10px 20px;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+    .input-box::-webkit-input-placeholder { /* Edge */
+      font-weight: bold;
+    }
+    .input-box:focus {
+      outline: none;
+      border: 0px solid #0AAD0A;
+    }
+    .input-box:hover
+    {
+      box-shadow: 0px 5px 10px 0px gray;
+    }
+    .top-margin
+    {
+      margin-top: 12px;
+    }
+
+/* Submit button css */
+.submit-btn
+{
+  width: 350px;
+  height: 40px;
+  color: white;
+  background-color: #0AAD0A;
+  padding: 8px 16px;
+  border: 0px solid #0AAD0A;
+  border-radius: 5px;
+}
+.submit-btn:hover
+{
+  font-weight: bold;
+  box-shadow: 0px 5px 10px 0px gray;
+}
+.link-css
+{
+  color: #0AAD0A;
+  text-decoration: none;
+}
+
+.fp-position
+{
+  flex: 1;
+  text-align: right;
+}
+.user-address-container
+{
+  width: 200px;
+  max-width: 300px;
+  height: 200px;
+  max-height: 300px;
+  margin: 0px 20px;
+  padding: 25px;
+  border: 1px solid gray;
+  border-radius: 25px;
+  box-shadow: 0px 5px 10px 0px gray;
+}
+.address-title
+{
+  font-size: 14px;
+  margin-bottom: 16px;
+  color: black;
+}
+.address-title-pos
+{
+  margin-bottom: 20px;
+}
+.address-details
+{
+  font-size: 14px;
+  font-weight: bold;
+  color: #5C6C75;
+}
+.delete-address
+{
+  margin-top: 20px;
+}
+.delete-address a
+{
+  color: #0AAD0A;
+  text-decoration: none;
+}
